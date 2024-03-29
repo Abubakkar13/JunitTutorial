@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.example.JunitTutorial.CalculatorTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.example.JunitTutorial.CalculatorTest
-test  Time elapsed: 0.001 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Denominator cannot be 1> but was: <Denominator cannot be 0>
-	at com.example.JunitTutorial.CalculatorTest.test(CalculatorTest.java:15)
-
