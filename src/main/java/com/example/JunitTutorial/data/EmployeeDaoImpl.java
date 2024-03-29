@@ -1,5 +1,6 @@
 package com.example.JunitTutorial.data;
 
+import com.example.JunitTutorial.api.EmployeeRequest;
 import com.example.JunitTutorial.util.DBConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,5 +22,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 .address(address)
 
                 .build();
+    }
+
+    public Employee getEmployee(int employeeId) {
+        return dbConnection.getEmployee(employeeId);
+    }
+
+    @Override
+    public void updateEmployee(int employeeId, EmployeeRequest employeeRequest) {
+        dbConnection.updateEmployee(employeeId, employeeRequest);
     }
 }

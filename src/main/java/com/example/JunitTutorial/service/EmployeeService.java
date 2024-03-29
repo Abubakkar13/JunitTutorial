@@ -27,4 +27,12 @@ public class EmployeeService {
     private void logRequest() {
         System.out.println("Creating Employee");
     }
+
+    public Employee getEmployee(int employeeId) {
+        return employeeDao.getEmployee(employeeId);
+    }
+
+    public void updateEmployee(int employeeId, EmployeeRequest employeeRequest) {
+        employeeDao.updateEmployee(employeeId, employeeRequest);
+    }
 }
