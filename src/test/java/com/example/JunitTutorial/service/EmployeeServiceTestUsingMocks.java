@@ -72,4 +72,7 @@ class EmployeeServiceTestUsingMocks {
         assertEquals(expectedEmployee, actualEmployee);
     }
 
+    // Assignment is to write test for scenario where employeeDao.createEmployee throws exception
+    // Test will be same as above test, but instead of thenReturn, use thenThrow
+
 }
