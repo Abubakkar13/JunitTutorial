@@ -11,8 +11,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Autowired
     DBConnection dbConnection;
 
-    public Employee createEmployee(int employeeId, String name, int age, String address) {
-        dbConnection.insert();
+    public Employee createEmployee(int employeeId, String name, int age, String address) throws UnsupportedOperationException {
+
+        try {
+            dbConnection.insert();
+        } catch (UnsupportedOperationException e) {
+            throw new UnsupportedOperationException("Failed to insert to DB");
+        }
 
         return Employee.builder()
                 .employeeId(employeeId)

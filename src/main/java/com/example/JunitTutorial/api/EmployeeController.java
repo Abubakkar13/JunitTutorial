@@ -16,7 +16,7 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping("/employee")
-    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest employeeRequest) {
+    public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeRequest employeeRequest) throws Exception {
 
         boolean isEmployeeRequestValid = checkEmployeeRequestValidity(employeeRequest);
 

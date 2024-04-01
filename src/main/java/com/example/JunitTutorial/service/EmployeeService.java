@@ -11,15 +11,25 @@ import java.util.Random;
 @Service
 public class EmployeeService {
 
-    Random random = new Random();
+    private static final int BOUND = 1_000;
+    Random random;
 
-    @Autowired
     EmployeeDao employeeDao;
 
-    public Employee createEmployee(EmployeeRequest employeeRequest) {
+    @Autowired
+    public EmployeeService(Random random, EmployeeDao employeeDao) {
+        this.random = random;
+        this.employeeDao = employeeDao;
+    }
+
+    public Employee createEmployee(EmployeeRequest employeeRequest) throws UnsupportedOperationException, InterruptedException {
         logRequest();
 
-        int employeeId = random.nextInt(1000);
+        int employeeId = 11;
+        for(int i=0; i<1000; i++) {
+
+        }
+        employeeId = random.nextInt(8);
 
         return employeeDao.createEmployee(employeeId, employeeRequest.getName(), employeeRequest.getAge(), employeeRequest.getAddress());
     }
