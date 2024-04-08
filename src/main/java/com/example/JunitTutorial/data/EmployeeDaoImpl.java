@@ -8,8 +8,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao {
 
-    @Autowired
     DBConnection dbConnection;
+
+    @Autowired
+    public EmployeeDaoImpl(DBConnection dbConnection) {
+        this.dbConnection = dbConnection;
+    }
 
     public Employee createEmployee(int employeeId, String name, int age, String address) throws UnsupportedOperationException {
 

@@ -22,14 +22,10 @@ public class EmployeeService {
         this.employeeDao = employeeDao;
     }
 
-    public Employee createEmployee(EmployeeRequest employeeRequest) throws UnsupportedOperationException, InterruptedException {
+    public Employee createEmployee(EmployeeRequest employeeRequest) throws UnsupportedOperationException {
         logRequest();
 
-        int employeeId = 11;
-        for(int i=0; i<1000; i++) {
-
-        }
-        employeeId = random.nextInt(8);
+        int employeeId = random.nextInt(BOUND);
 
         return employeeDao.createEmployee(employeeId, employeeRequest.getName(), employeeRequest.getAge(), employeeRequest.getAddress());
     }
