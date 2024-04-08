@@ -50,5 +50,61 @@ More Details [here](https://www.geeksforgeeks.org/unit-testing-software-testing)
 
 More annotations can be found [here](https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations)
 
+## Mocking
+
+Mocking is creating objects that simulate the behaviour of real objects. To use mocking, add mockito library to you class path. And annotate your test class with @ExtendWith(MockitoExtension.class)
+
+### How to create mocks
+
+1. Using **Mockito.mock()**
+
+> ClassToMock mock = Mockito.mock(ClassToMock.class)
+
+2. Using **@Mock** Annotation
+
+   > @Mock
+   >
+   > ClassToMock classToMock
+
+### How to Create the class under test and inject mocks 
+
+1. Using **new operator**
+
+   > ClassUnderTest class = new ClassUnderTest(mock)
+
+2. Using **@InjectMocks** annotation
+
+   > @InjectMocks
+   >
+   > ClassUnderTest class;
+
+### Configuring Mocks
+
+1. Configuring mock for non-void methods
+
+   > Mocktito.when(random.nextInt(anyInt()))
+   >
+   > ​	.thenReturn(50)
+
+2. Configuring mocks for void methods
+
+   > Mockito.doNothing().when(random.nextInt())
+
+### Mockito internals
+
+To dive deeper into mockito refer [here](https://medium.com/@gorali/how-mockito-works-7d3a2c77da71)
+
+### verify cookbook
+
+To dive deeper into verify refer [here](https://www.baeldung.com/mockito-verify)
+
+### Argument Captor
+
+To dive deeper into verify refer [here](https://www.baeldung.com/mockito-argumentcaptor)
+
+### Spy
+
+To dive deeper into verify refer [here](https://www.baeldung.com/mockito-spy)
+
 ### [Source code GitHub link](https://github.com/nasasatyanasa/JunitTutorial)
 
